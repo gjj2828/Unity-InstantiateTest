@@ -5,6 +5,7 @@ using UnityEngine;
 public class TestUnit : MonoBehaviour
 {
     private bool flag = false;
+    protected bool flag_protected = false;
     public bool flag_public = false;
     [SerializeField]
     private bool flag_serialize = false;
@@ -20,6 +21,7 @@ public class TestUnit : MonoBehaviour
     public void SetFlag(bool f)
     {
         flag = f;
+        flag_protected = f;
         flag_public = f;
         flag_serialize = f;
         flag_hide = f;
@@ -28,7 +30,7 @@ public class TestUnit : MonoBehaviour
 
     private void LogFlag()
     {
-        Debug.Log(string.Format("{0}: {1}, {2}, {3}, {4}", name, flag, flag_public, flag_serialize, flag_hide));
+        Debug.Log(string.Format("{0}: {1}, {2}, {3}, {4}, {5}", name, flag, flag_protected, flag_public, flag_serialize, flag_hide));
     }
 
     // Update is called once per frame
